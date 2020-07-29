@@ -14,10 +14,6 @@ public class EnemyCombat : MonoBehaviour
         particle = gameObject.GetComponent<ParticleSystem>();
     }
 
-    void Update()
-    {
-        
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.collider.tag == "Bullet")
@@ -32,7 +28,7 @@ public class EnemyCombat : MonoBehaviour
         if(health <= 0)
         {
             particle.Play();
-            Destroy(gameObject);
+            Destroy(gameObject,0.1f);
         }
     }
 }

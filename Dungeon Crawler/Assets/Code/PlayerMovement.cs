@@ -16,15 +16,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
 
 
-    void Update()
-    {
-       
-        Rotation();
-    }
+  
 
     void FixedUpdate()
     {
-      
+        Rotation();
         Movement();
     }
 

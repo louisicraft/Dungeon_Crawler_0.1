@@ -11,16 +11,7 @@ public class PlayerCombat : MonoBehaviour
 
     public ParticleSystem particle;
 
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+  
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.collider.CompareTag("Enemy") == true)

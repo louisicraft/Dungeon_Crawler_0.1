@@ -16,6 +16,8 @@ public class BaseEnemy : MonoBehaviour
     //Follow player
     public float followSpeed = 1f;
     private GameObject player;
+    private bool aggro = false;
+
 
     //Knockback
     private Vector2 knockbackDir;
@@ -27,6 +29,10 @@ public class BaseEnemy : MonoBehaviour
     public float flyTimerPeriod = 0.1f;
 
     private bool isKnockDone = true;
+
+
+
+
 
     void Start()
     {
@@ -50,10 +56,17 @@ public class BaseEnemy : MonoBehaviour
         }
     }
 
+    void OnBecameVisible()
+    {
+        aggro = true;
+    }
+
+
     private void FollowPlayer()
     {
-        if (knockTimer <= Time.time)
+        if (knockTimer <= Time.time && aggro == true)
         {
+            aggro = true;
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, followSpeed);
         }
     }
