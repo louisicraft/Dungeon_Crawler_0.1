@@ -8,6 +8,9 @@ TagManager:
   - Bullet
   - SpawnPoint
   - Rooms
+  - Doorway
+  - EntryCamCollider
+  - CameraBrain
   layers:
   - Default
   - TransparentFX
