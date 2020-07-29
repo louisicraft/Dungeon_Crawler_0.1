@@ -548,13 +548,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 25146653, guid: abed33ad0b85f91459cd937c85d09596, type: 3}
-      propertyPath: camConfiner
-      value: 
-      objectReference: {fileID: 282304749}
+    - target: {fileID: 25146650, guid: abed33ad0b85f91459cd937c85d09596, type: 3}
+      propertyPath: m_TagString
+      value: LeftDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 25146651, guid: abed33ad0b85f91459cd937c85d09596, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.561
+      objectReference: {fileID: 0}
+    - target: {fileID: 525607921364088292, guid: abed33ad0b85f91459cd937c85d09596, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1979340455622677572, guid: abed33ad0b85f91459cd937c85d09596, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.997
+      objectReference: {fileID: 0}
+    - target: {fileID: 2410961736652361137, guid: abed33ad0b85f91459cd937c85d09596, type: 3}
+      propertyPath: m_TagString
+      value: TopDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557883927977082545, guid: abed33ad0b85f91459cd937c85d09596, type: 3}
+      propertyPath: m_TagString
+      value: RightDoor
+      objectReference: {fileID: 0}
     - target: {fileID: 5468591405655867660, guid: abed33ad0b85f91459cd937c85d09596, type: 3}
       propertyPath: m_Name
       value: Entry Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542394559409137240, guid: abed33ad0b85f91459cd937c85d09596, type: 3}
+      propertyPath: m_TagString
+      value: BottomDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748631192776214530, guid: abed33ad0b85f91459cd937c85d09596, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.435
       objectReference: {fileID: 0}
     - target: {fileID: 6456573011258064995, guid: abed33ad0b85f91459cd937c85d09596, type: 3}
       propertyPath: m_LocalPosition.x

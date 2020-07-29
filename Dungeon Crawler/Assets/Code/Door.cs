@@ -5,38 +5,23 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-
-    //die collider gehen an und aus jedoch muss der collider noch für die kamera eingestellt werden,
-    //wenn ein neuer camcollider aktiviert wird ist er nicht bei der Camera registriert und das muss geändert werden
-
-
-
     public GameObject[] enemies;
-    public BoxCollider2D camCollider;
-    private bool isColliderActive = false;
+
+    private BoxCollider2D camCollider;
     private Collider2D camPolygonCollider;
-    public CinemachineConfiner camConfiner;
+    private CinemachineConfiner camConfiner;
 
     public bool roomIsClear = false;
     // Start is called before the first frame update
     void Start()
     {
-
         camConfiner = GameObject.FindGameObjectWithTag("CameraBrain").GetComponent<CinemachineConfiner>();
         camPolygonCollider = this.transform.parent.GetComponent<CompositeCollider2D>();
         camCollider = this.transform.parent.GetComponent<BoxCollider2D>();
-
-        if (this.transform.parent.gameObject.CompareTag("EntryCamCollider"))
-        {
-             isColliderActive = true;
-        }
     }
 
     private void Update()
-    {
-        
-
-        
+    {          
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (enemies.Length == 0)
         {
@@ -48,28 +33,21 @@ public class Door : MonoBehaviour
         }
     }
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-
-        
-  
-
         if(collision.CompareTag("Player") == true && roomIsClear == true)
         {
-            if(isColliderActive == true)
+            if(camCollider.enabled == true)
             {
+
                 camCollider.enabled = false;
-                isColliderActive = false;
+              
             }
-            else if(isColliderActive == false)
+            else if(camCollider.enabled == false)
             {
                 camConfiner.m_BoundingShape2D = camPolygonCollider;
-                camCollider.enabled = true;
-                isColliderActive = true;
-            }
-           
+                camCollider.enabled = true;        
+            }         
         }
-
     }
 }
